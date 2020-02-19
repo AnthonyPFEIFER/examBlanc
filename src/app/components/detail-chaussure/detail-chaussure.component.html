@@ -1,0 +1,18 @@
+<div *ngIf="!isLoading">
+    <div>
+        <p>Chaussure Numéro {{ chaussure.id }} </p>
+        <p>Chaussure Nom {{ chaussure.nom }} </p>
+        <p>Chaussure Marque {{ chaussure.marque }} </p>
+        <p>Chaussure Type {{ chaussure.type }} </p>
+        <p>Chaussure Date {{ chaussure.dateEntreStock }} </p>
+    </div>
+</div>
+
+<div *ngIf="isLoading">
+    En cours de chargement
+</div>
+
+
+
+
+<a routerLink="/home"><button class="btn-success">Revenir à la liste des chaussures</button></a>

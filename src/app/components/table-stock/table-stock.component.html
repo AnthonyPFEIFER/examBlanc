@@ -1,0 +1,47 @@
+<h1> Liste des Chaussures disponibles en magasin </h1>
+<h2> Nombre de chaussures disponibles en magasin: {{ chaussures.length}} </h2>
+<ng-container *ngIf="!isLoading">
+    <table class="table table-sm table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Marque</th>
+                <th scope="col">Type</th>
+                <th scope="col">Taille</th>
+                <th class="col-date" scope="col"> Date de l'entrée en stock</th>
+                <th class="col-action" scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let chaussure of chaussures" [routerLink]="['/chaussure', chaussure.id]">
+                <th scope="row"> {{chaussure.id}} </th>
+                <td>{{chaussure.nom}}</td>
+                <td>{{chaussure.marque}}</td>
+                <td>{{chaussure.type}}</td>
+                <td>{{chaussure.taille}}</td>
+                <td class="col-date">{{chaussure.dateEntreStock}}</td>
+                <td class="col-action">
+                    <div class="btn-div">
+                        <a [routerLink]="['/chaussure/edit/', chaussure.id]">
+                            <button class="btn btn-success"> Editer</button>
+                        </a>
+                        <a class="deleteChaussure" (click)="deleteChaussure(chaussure.id)">
+                            <button class="btn btn-danger"> Supprimer
+                            </button>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
+
+<div>
+    <a [routerLink]="['/chaussure/add']">
+        <button class="btn-success pull-right">
+            Ajouter un article
+        </button>
+    </a>
+
+</div>

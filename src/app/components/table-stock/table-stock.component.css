@@ -1,0 +1,16 @@
+table{
+    max-width: 1000px;
+    margin: auto;
+}
+h1, h2, h3{
+    text-align: center;
+}
+.btn-div{
+    text-align: right;
+}
+.col-date{
+    max-width: 200px;
+}
+.col-action{
+    max-width: 200px;
+}

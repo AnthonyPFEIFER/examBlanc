@@ -1,0 +1,95 @@
+<h1>Ajouter une chaussure : </h1>
+<form #validationChaussure="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="nom">Nom de la chaussure</label>
+        <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="chaussureForm.nom"
+            #nom="ngModel">
+        <div [hidden]="nom.valid" class="alert alert-danger">
+            Veuillez saisir un nom
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="marque">Marque de la chaussure</label>
+        <div>
+            <input type="radio" id="huey" name="marque" value="Adidas" [(ngModel)]="chaussureForm.marque"
+                #marque="ngModel">
+            <label for="Adidas">Adidas</label>
+        </div>
+        <div>
+            <input type="radio" id="dewey" name="marque" value="Nike" [(ngModel)]="chaussureForm.marque"
+                #marque="ngModel">
+            <label for="Nike">Nike</label>
+        </div>
+        <div>
+            <input type="radio" id="louie" name="marque" value="Puma" [(ngModel)]="chaussureForm.marque"
+                #marque="ngModel">
+            <label for="Puma">Puma</label>
+        </div>
+        <div [hidden]="marque.valid" class="alert alert-danger">
+            Veuillez saisir la marque
+        </div>
+    </div>
+    <div>
+        <label for="type-select">Quel est le type de chaussure ?</label>
+        <select name="type" id="type-select" [(ngModel)]="chaussureForm.type" #type="ngModel">
+            <option value="defaut">--Choisissez un type--</option>
+            <option value="Sport">Sport</option>
+            <option value="Ville">Ville</option>
+            <option value="Football">Football</option>
+        </select>
+        <div [hidden]="type.valid" class="alert alert-danger">
+            Veuillez saisir le type de chaussure
+        </div>
+    </div>
+    <!--     <div class="form-group">
+        <label for="type">Type de la chaussure</label>
+        <div>
+            <input type="radio" id="Sport" name="type" value="sport" [(ngModel)]="chaussureForm.type" #type="ngModel">
+            <label for="Adidas">Sport</label>
+        </div>
+        <div>
+            <input type="radio" id="Ville" name="type" value="ville" [(ngModel)]="chaussureForm.type" #type="ngModel">
+            <label for="Nike">Ville</label>
+        </div>
+        <div>
+            <input type="radio" id="Football" name="type" value="football" [(ngModel)]="chaussureForm.type"
+                #type="ngModel">
+            <label for="Puma">Football</label>
+        </div>
+        <div [hidden]="type.valid" class="alert alert-danger">
+            Veuillez saisir le type de chaussure
+        </div>
+    </div> -->
+
+    <!--     <div class="form-group">
+        <label for="type">Type de la chaussure</label>
+        <input type="text" class="form-control" id="type" name="type" required [(ngModel)]="chaussureForm.type"
+            #type="ngModel">
+        <div [hidden]="type.valid" class="alert alert-danger">
+            Veuillez saisir un type de chaussure
+        </div>
+    </div> -->
+    <div class="form-group">
+        <label for="tailles">Taille de la chaussure</label>
+        <input type="number" class="form-control" id="taille" name="taille" required [(ngModel)]="chaussureForm.taille"
+            #taille="ngModel" step="0.5">
+        <div [hidden]="taille.valid" class="alert alert-danger">
+            Veuillez saisir une taille de pointure
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="taille">Date d'entrée en stock</label>
+        <input type="date" class="form-control" id="date" name="date" required
+            [(ngModel)]="chaussureForm.dateEntreStock" #date="ngModel">
+        <div [hidden]="date.valid" class="alert alert-danger">
+            Veuillez saisir une taille de pointure
+        </div>
+    </div>
+
+
+    <input type="submit" [disabled]="!validationChaussure.valid">
+
+
+</form>

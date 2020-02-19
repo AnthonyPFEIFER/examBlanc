@@ -1,0 +1,20 @@
+{
+  "chaussure": [
+    {
+      "id": 1,
+      "nom": "f80",
+      "marque": "Adidas",
+      "type": "Sport",
+      "taille": "42",
+      "dateEntreStock": "2020-02-18"
+    },
+    {
+      "id": 2,
+      "nom": "m69",
+      "marque": "Adidas",
+      "type": "Ville",
+      "taille": "40",
+      "dateEntreStock": "2020-10-14"
+    }
+  ]
+}
